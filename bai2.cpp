@@ -1,30 +1,27 @@
-#include<iostream>
+#include <iostream>
+#include <cmath>
+  
+#include <iostream>
+#include <cmath>
 using namespace std;
+ 
+int snt(int x)
+{
+    if (x < 2)
+        return 0;
+    for (int i = 2; i <= sqrt(x); i++)
+        if (x%i == 0)
+            return 0;
+    return 1;
+}
+ 
 int main()
 {
-  int i, n;
-  long S = 0, P = 1;
-  do
-  {
-    cout<<"\nNhập vào số n: ";
-    cin>>n;
-    if(n < 1)
-    {
-      cout<<"\nSố n phải lớn hơn hoặc bằng 1, xin vui lòng nhập lại !";
-    }
-  }while(n < 1);
-  //sử dụng vòng lặp for để tính biểu thức
-  for(int i = 1; i <= n; i ++){
-    P = P * i;
-    S = S + P;
-  }
-  // có thể sử dụng vòng lặp while để tính biểu thức
-  // while(i <= n)
-  // {
-  //    P = P * i;
-  //    S = S + P;
-  //    i++;
-  // }
-  cout<<"\nTổng của biểu thức: "<<S;
-  return 0;
+    int n; 
+    cout<<"Nhap n:"; cin>>n;
+    for (int i = 1; i < n; i++)
+        if (snt(i))
+            cout << i << " ";
+    system("pause");
+    return 0;
 }

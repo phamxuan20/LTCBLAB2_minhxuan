@@ -1,16 +1,21 @@
 #include <iostream>
 using namespace std;
-int main() {
-  int so;
-  int soTemp;
-  int tong = 0;
-  cout << "Nhap so: ";
-  cin >> so;
-  soTemp = so;
-  while (soTemp != 0) {
-    tong += soTemp % 10;
-    soTemp /= 10;
-  }
-  cout << "Tong cac chu so cua so " << so << " la " << tong << endl;
-  return 0;
+
+int main(){
+    int n, tmp;
+    cout<<"nhap so:";
+    cin >> n;
+    bool first = true;
+    while(n > 0){
+        tmp = n % 10;
+        if(first == true){
+        	if(tmp != 0){
+        		cout << tmp;
+        		first = false;
+            }
+        }else{
+            cout << tmp;
+        }
+        n = n / 10;
+    }
 }
